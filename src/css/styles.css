@@ -1512,3 +1512,52 @@ letter-spacing: -0.28px;
   fill: #404040;
   stroke: #404040;
 }
+/* =================================================================================================== */
+/*================================= CART STYLES CSS ===================================== */
+.icon-cart {
+  transition: all 600ms ease-in-out;
+}
+
+.cart-open {
+  background-color: inherit;
+  border: none;
+}
+.cart-open:hover .icon-cart,
+.cart-open:focus .icon-cart {
+  stroke: #fd9222;
+  fill: #fd9222;
+}
+/* ===================================== */
+.cart-container {
+  max-width: 50%;
+  min-width: 40%;
+  min-height: 50%;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  transition: all 400ms ease-in-out;
+}
+
+.close-cart-container {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.cart-title {
+  text-transform: uppercase;
+  font-size: 24px;
+  text-align: center;
+}
+.cart-title span {
+  color: var(--accent-color);
+}
+.no-prod {
+  font-size: 24px;
+  font-weight: 700;
+  color: #404040;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 20px;
+}

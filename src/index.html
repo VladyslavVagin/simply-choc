@@ -131,8 +131,8 @@
             ></a>
           </li>
         </ul>
-        <a href="" class="cart"><svg class="icon-cart" width="20" height="20">
-          <use href="./images/icons/icons.svg#icon-cart"></use></svg><span></span></a>
+        <button class="cart-open" data-cart-open type="button"><svg class="icon-cart" width="20" height="20">
+          <use href="./images/icons/icons.svg#icon-cart"></use></svg><span></span></button>
       </div>
     </header>
     <main>
@@ -959,7 +959,7 @@
     <div class="backdrop is-hidden" data-modal>
       <form class="review-form" name="review-client-form" autocomplete="on">
         <div class="close-review-button-container">
-          <button class="close-review-button" type="submit" data-modal-close>
+          <button class="close-review-button" type="button" data-modal-close>
             <svg class="close-button-icon" width="28" height="28">
               <use href="./images/icons/icons.svg#icon-close"></use>
             </svg>
@@ -1060,12 +1060,30 @@
         <use href="./images/icons/icons.svg#icon-circle-up">
         </use></svg>
     </a>
+<!-- ============================= CART OF PRODUCTS FOR SALE =============================================================== -->
+<div class="cart-container" data-cart>
+  <div class="cart-wrapper">
+    <div class="close-cart-container">
+      <button class="close-review-button close-cart" type="button" data-cart-close>
+        <svg class="close-button-icon" width="28" height="28">
+          <use href="./images/icons/icons.svg#icon-close"></use>
+        </svg>
+      </button>
+    </div>
+      <h3 class="cart-title"><span>buy&nbsp;</span>now</h3>
+      <div class="cards-products-choosen">
+        <p class="no-prod">no any product in cart :(</p>
+                 <!-- here will put the products cards -->
+      </div>
+  </div>
+</div>
     <!-- ====================================================================================================================== -->
     <!-- =================================================================================================================== -->
     <script src="./js/cart.js" type="module"></script>
     <script src="./js/overlay.js" type="module"></script>
     <script src="./js/menu.js"></script>
     <script src="./js/modal.js"></script>
+    <script src="./js/open-close-cart.js"></script>
     <script src="./js/video.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="./js/script.js"></script>
