@@ -120,8 +120,8 @@ function onEntry(entry) {
  buttonUp.classList.add('is-hidden');
 
  function onScroll () {
- if (scrollY < 500) {
+ if (scrollY < 700) {
          buttonUp.classList.add('is-hidden');
-     } else if (scrollY > 500)
+     } else if (scrollY > 700)
          buttonUp.classList.remove('is-hidden');
  };
