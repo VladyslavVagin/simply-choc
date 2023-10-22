@@ -1,3 +1,12 @@
+import anime from 'animejs/lib/anime.es.js';
+
+anime({
+    targets: '.container',
+    translateY: [250, 0],
+    opacity: [0, 1],
+    duration: 4000
+  });
+
 // MILK CHOCOLATE 
 const milkChocOpen = document.querySelector('.but-one-milk-choc');
 const milkChocolateOverlay = document.querySelector('.overlay-milk-chocolate');
@@ -88,3 +97,17 @@ function onOpenOverlayCoconut() {
 function onCloseOverlayCoconut() {
     coconutOverlay.classList.remove('superactive');
 };
+
+function onEntry(entry) {
+    entry.forEach(change => {
+       if (change.isIntersecting) {
+          change.target.classList.add('element-show');
+       }
+    });
+ }
+ let options = { threshold: [0.2] };
+ let observer = new IntersectionObserver(onEntry, options);
+ let elements = document.querySelectorAll('.element-animation');
+ for (let elm of elements) {
+    observer.observe(elm);
+ }
