@@ -11,6 +11,7 @@ anime({
 const milkChocOpen = document.querySelector('.but-one-milk-choc');
 const milkChocolateOverlay = document.querySelector('.overlay-milk-chocolate');
 const milkChocolateClose = document.querySelector('.js-milk-choc');
+const buttonUp = document.querySelector('.up-button');
 milkChocOpen.addEventListener('click', onOpenOverlay);
 function onOpenOverlay() {
     milkChocolateOverlay.classList.add('superactive');
@@ -111,3 +112,15 @@ function onEntry(entry) {
  for (let elm of elements) {
     observer.observe(elm);
  }
+
+//  SCROLL BUTTON UP 
+
+ window.addEventListener('scroll', onScroll);
+ buttonUp.classList.add('is-hidden');
+
+ function onScroll () {
+ if (scrollY < 500) {
+         buttonUp.classList.add('is-hidden');
+     } else if (scrollY > 500)
+         buttonUp.classList.remove('is-hidden');
+ };

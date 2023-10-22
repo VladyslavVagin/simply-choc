@@ -1491,3 +1491,23 @@ letter-spacing: -0.28px;
   transform: translateY(0%);
   transition: all 0.5s ease-in-out;
 }
+.icon-circle-up {
+  display: inline-block;
+  width: 80%;
+  z-index: 99999;
+  stroke: var(--accent-color);
+  fill: var(--swiper-theme-color);
+}
+.up-button {
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  bottom: 20%;
+  right: 3%;
+  opacity: 0.6;
+  transition: all 600ms ease-in-out;
+}
+ .up-button:hover .icon-circle-up:hover, .up-button:focus .icon-circle-up:focus {
+  fill: #404040;
+  stroke: #404040;
+}
