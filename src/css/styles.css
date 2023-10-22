@@ -1497,6 +1497,7 @@ letter-spacing: -0.28px;
   z-index: 99999;
   stroke: var(--accent-color);
   fill: var(--swiper-theme-color);
+  transition: all 600ms ease-in-out;
 }
 .up-button {
   width: 60px;
@@ -1505,7 +1506,6 @@ letter-spacing: -0.28px;
   bottom: 20%;
   right: 3%;
   opacity: 0.6;
-  transition: all 600ms ease-in-out;
 }
  .up-button:hover .icon-circle-up:hover, .up-button:focus .icon-circle-up:focus {
   fill: #404040;

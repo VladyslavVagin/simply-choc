@@ -1,4 +1,5 @@
 import anime from 'animejs/lib/anime.es.js';
+var throttle = require('lodash.throttle');
 
 anime({
     targets: '.container',
@@ -115,7 +116,7 @@ function onEntry(entry) {
 
 //  SCROLL BUTTON UP 
 
- window.addEventListener('scroll', onScroll);
+ window.addEventListener('scroll', throttle((onScroll), 1000));
  buttonUp.classList.add('is-hidden');
 
  function onScroll () {
