@@ -167,7 +167,7 @@ body {
 /*================ BURGER MENU ================= */
 .backdrop-burger {
   background-color: hsla(0, 1%, 25%, 0.301);
-  z-index: 900;
+  z-index: 9999999;
 }
 
 .burger-menu-container {
@@ -176,7 +176,7 @@ body {
   background-color: #1e1823;
   padding: 20px;
   position: absolute;
-  z-index: 999;
+  z-index: 999999999;
   top: 0;
   right: 0;
   position: fixed;

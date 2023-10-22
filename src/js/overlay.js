@@ -1,12 +1,4 @@
-import anime from 'animejs/lib/anime.es.js';
 var throttle = require('lodash.throttle');
-
-anime({
-    targets: '.container',
-    translateY: [250, 0],
-    opacity: [0, 1],
-    duration: 4000
-  });
 
 // MILK CHOCOLATE 
 const milkChocOpen = document.querySelector('.but-one-milk-choc');
