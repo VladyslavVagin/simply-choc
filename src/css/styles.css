@@ -1578,5 +1578,6 @@ letter-spacing: -0.28px;
   width: 100%;
 }
 .prod-card-title {
-  width: 40%;
+  width: 50%;
+  text-transform: uppercase;
 }
