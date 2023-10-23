@@ -1537,7 +1537,11 @@ letter-spacing: -0.28px;
   top: 0;
   right: 0;
   background-color: #fff;
+  transform: translateX(100%);
   transition: all 400ms ease-in-out;
+}
+.visual {
+  transform: translateX(0);
 }
 
 .close-cart-container {
