@@ -1529,8 +1529,7 @@ letter-spacing: -0.28px;
 }
 /* ===================================== */
 .cart-container {
-  max-width: 100%;
-  min-width: 50%;
+  min-width: 100%;
   min-height: 50%;
   padding: 20px;
   position: fixed;
@@ -1577,5 +1576,7 @@ letter-spacing: -0.28px;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-
+}
+.prod-card-title {
+  width: 40%;
 }
