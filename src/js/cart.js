@@ -1,5 +1,4 @@
 const addProductToCart = document.querySelectorAll('.add-product-button');
-const deleteProductFromCart = document.querySelectorAll('.delete-product');
 const fullPrice = document.querySelector('.total-dinero');
 const cardProductList = document.querySelector('.products-cards');
 const showQuantity = document.querySelector('.quantity-products');
@@ -49,8 +48,11 @@ function markupCard ({id, title, priceNumber}) {
 
 function deleteProduct(productParent) {
 let id = productParent.dataset.id;
-console.log(id);
-productParent.querySelector('.delete-product').disabled = false;
+addProductToCart.forEach(addButton => {
+  if (id === addButton.closest('.products-list-item').getAttribute('data-id')) {
+    addButton.disabled = false;
+  }
+})
 
 let currentPrice = parseInt(priceWithoutSpaces(productParent.querySelector('.card-content-price').textContent));
 minusFullPrice(currentPrice);
