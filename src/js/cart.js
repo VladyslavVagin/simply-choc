@@ -1,3 +1,5 @@
+import { Notify } from "notiflix";
+
 const cardOfProduct = document.querySelectorAll('.prod-card');
 const addToBtn = document.querySelectorAll('.add-product-button');
 const counter = document.querySelectorAll('#value');
@@ -10,6 +12,7 @@ function addCard(event) {
   cardOfProduct.forEach(card => {
     if(card.getAttribute('value') === addBtnValue) {
       card.classList.remove('visually-hidden');
+      Notify.success('PRODUCT WAS ADDED TO CART');
     }
   });
 };
