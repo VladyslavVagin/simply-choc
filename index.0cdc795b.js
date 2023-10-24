@@ -1,2 +1,0 @@
-const e=document.querySelectorAll(".prod-card"),t=document.querySelectorAll(".add-product-button");document.querySelectorAll("#value");function l(t){addBtnValue=t.currentTarget.getAttribute("value"),e.forEach((e=>{e.getAttribute("value")===addBtnValue&&e.classList.remove("visually-hidden")}))}e.forEach((e=>e.classList.add("visually-hidden"))),t.forEach((e=>e.addEventListener("click",l)));
-//# sourceMappingURL=index.0cdc795b.js.map
