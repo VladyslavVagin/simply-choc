@@ -1063,8 +1063,6 @@
 <!-- ============================= CART OF PRODUCTS FOR SALE =============================================================== -->
 <div class="cart-container" data-cart>
   <div class="cart-wrapper">
-
-    <!-- CLOSE CART BUTTON  -->
     <div class="close-cart-container">
       <button class="close-review-button close-cart" type="button" data-cart-close>
         <svg class="close-button-icon" width="28" height="28">
@@ -1072,117 +1070,23 @@
         </svg>
       </button>
     </div>
-    <!-- =============================================== -->
-
       <h3 class="cart-title"><span>buy&nbsp;</span>now</h3>
       <div class="cards-products-choosen">
         <p class="no-prod">no any product in cart</p>
         <ul class="products-cards">
-
-             <!-- card for dark chocolate "Orange" -->
-              <li class="prod-card" value="1">
-                <img src="./images/products/orange.jpg" width="60" height="60" class="card-prod-image" />
+              <!-- here will put the products cards -->
+              <!-- <li class="prod-card">
                 <h4 class="prod-card-title">Dark chocolate "Orange"</h4>
                 <div id="counter">
-                  <button type="button" data-action="decrement" value="1">-1</button>
-                  <span id="value" value="1">0</span>
-                  <button type="button" data-action="increment" value="1">+1</button>
+                  <button type="button" data-action="decrement">-1</button>
+                  <span id="value">0</span>
+                  <button type="button" data-action="increment">+1</button>
                 </div>
-                <h5>Price: <span>45</span> UAH</h5>
+                <h5>Price: <span></span></h5>
                 <button type="button" class="delete-product" value="1">Delete</button>
-              </li>
 
-              <!-- card for apple & cranberry milk chocolate  -->
-              <li class="prod-card" value="2">
-                <img src="./images/products/apple-cranberry.jpg" width="60" height="60" class="card-prod-image" />
-                <h4 class="prod-card-title">Milk chocolate "Apple & cranberry"</h4>
-                <div id="counter">
-                  <button type="button" data-action="decrement" value="2">-1</button>
-                  <span id="value" value="2">0</span>
-                  <button type="button" data-action="increment" value="2">+1</button>
-                </div>
-                <h5>Price: <span>50</span> UAH</h5>
-                <button type="button" class="delete-product" value="2">Delete</button>
-              </li>
-
-              <!-- card for dark chocolate "Lime & Sea salt" -->
-              <li class="prod-card" value="3">
-                <img src="./images/products/lime-salt.jpg" width="60" height="60" class="card-prod-image" />
-                <h4 class="prod-card-title">Dark chocolate "Lime & Sea Salt"</h4>
-                <div id="counter">
-                  <button type="button" data-action="decrement" value="3">-1</button>
-                  <span id="value" value="3">0</span>
-                  <button type="button" data-action="increment" value="3">+1</button>
-                </div>
-                <h5>Price: <span>66</span> UAH</h5>
-                <button type="button" class="delete-product" value="3">Delete</button>
-              </li>
-
-              <!-- card for dark chocolate "Pineapple" -->
-              <li class="prod-card" value="4">
-                <img src="./images/products/pineapple.jpg" width="60" height="60" class="card-prod-image" />
-                <h4 class="prod-card-title">Dark chocolate "Pineapple"</h4>
-                <div id="counter">
-                  <button type="button" data-action="decrement" value="4">-1</button>
-                  <span id="value" value="4">0</span>
-                  <button type="button" data-action="increment" value="4">+1</button>
-                </div>
-                <h5>Price: <span>54</span> UAH</h5>
-                <button type="button" class="delete-product" value="4">Delete</button>
-              </li>
-
-              <!-- card for milk chocolate "Classic" -->
-              <li class="prod-card" value="5">
-                <img src="./images/products/classic-milk.jpg" width="60" height="60" class="card-prod-image" />
-                <h4 class="prod-card-title">Milk chocolate "Classic"</h4>
-                <div id="counter">
-                  <button type="button" data-action="decrement" value="5">-1</button>
-                  <span id="value" value="5">0</span>
-                  <button type="button" data-action="increment" value="5">+1</button>
-                </div>
-                <h5>Price: <span>45</span> UAH</h5>
-                <button type="button" class="delete-product" value="5">Delete</button>
-              </li>
-
-              <!-- card for milk chocolate "Honey"  -->
-              <li class="prod-card" value="6">
-                <img src="./images/products/honey.jpg" width="60" height="60" class="card-prod-image" />
-                <h4 class="prod-card-title">Milk chocolate "Honey"</h4>
-                <div id="counter">
-                  <button type="button" data-action="decrement" value="6">-1</button>
-                  <span id="value" value="6">0</span>
-                  <button type="button" data-action="increment" value="6">+1</button>
-                </div>
-                <h5>Price: <span>50</span> UAH</h5>
-                <button type="button" class="delete-product" value="6">Delete</button>
-              </li>
-
-              <!-- card for dark chocolate "Roasted Fruits" -->
-              <li class="prod-card" value="7">
-                <img src="./images/products/roasted-fruits.jpg" width="60" height="60" class="card-prod-image" />
-                <h4 class="prod-card-title">Dark chocolate "Roasted Fruits"</h4>
-                <div id="counter">
-                  <button type="button" data-action="decrement" value="7">-1</button>
-                  <span id="value" value="7">0</span>
-                  <button type="button" data-action="increment" value="7">+1</button>
-                </div>
-                <h5>Price: <span>66</span> UAH</h5>
-                <button type="button" class="delete-product" value="7">Delete</button>
-              </li>
-
-              <!-- card for white chocolate "Classic" -->
-              <li class="prod-card" value="8">
-                <img src="./images/products/classic-white.jpg" width="60" height="60" class="card-prod-image" />
-                <h4 class="prod-card-title">White chocolate "Classic"</h4>
-                <div id="counter">
-                  <button type="button" data-action="decrement" value="8">-1</button>
-                  <span id="value" value="8">0</span>
-                  <button type="button" data-action="increment" value="8">+1</button>
-                </div>
-                <h5>Price: <span>54</span> UAH</h5>
-                <button type="button" class="delete-product" value="8">Delete</button>
-              </li>
-        </ul> 
+              </li> -->
+      </ul> 
         <p>Total:<span class="total-dinero"></span></p>
       </div>
   </div>
