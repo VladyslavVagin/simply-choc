@@ -16,12 +16,13 @@ function onAddProduct(el) {
     let parent = self.closest('.products-list-item');
     let id = parent.dataset.id;
     let title = parent.querySelector('.products-list-name').textContent;
+    console.log(title);
     let priceNumber = parseInt(priceWithoutSpaces(parent.querySelector('.add-product-button').textContent));
 
     plusFullPrice(priceNumber)
     console.log(price);
     printFullPrice();
-    cardProductList.insertAdjacentHTML('beforeend', markupCard(title, priceNumber, id));
+    cardProductList.insertAdjacentHTML('beforeend', markupCard({title, priceNumber, id}));
     printQuantity();
    
     self.disabled = true;
@@ -78,7 +79,7 @@ function minusFullPrice(currentPrice) {
     return price -= currentPrice;
 };
 function printFullPrice() {
-    fullPrice.textContent = '${normalPrice(price)} UAH';
+    fullPrice.textContent = `${normalPrice(price)} UAH`;
 };
 
 function printQuantity() {

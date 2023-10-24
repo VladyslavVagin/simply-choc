@@ -1596,3 +1596,8 @@ letter-spacing: -0.28px;
   align-items: center;
   justify-content: center;
 }
+.total-dinero {
+  margin-left: 15px;
+  font-weight: 600;
+  color: #fd9222;
+}
