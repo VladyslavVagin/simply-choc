@@ -1,0 +1,2 @@
+!function(){var e=document.querySelectorAll(".prod-card"),t=document.querySelectorAll(".add-product-button");document.querySelectorAll("#value");function u(t){addBtnValue=t.currentTarget.getAttribute("value"),e.forEach((function(e){e.getAttribute("value")===addBtnValue&&e.classList.remove("visually-hidden")}))}e.forEach((function(e){return e.classList.add("visually-hidden")})),t.forEach((function(e){return e.addEventListener("click",u)}))}();
+//# sourceMappingURL=index.7f17f582.js.map
