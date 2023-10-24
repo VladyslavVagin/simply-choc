@@ -1,4 +1,5 @@
 const addProductToCart = document.querySelectorAll('.add-product-button');
+const deleteProductFromCart = document.querySelectorAll('.delete-product');
 const fullPrice = document.querySelector('.total-dinero');
 const cardProductList = document.querySelector('.products-cards');
 const showQuantity = document.querySelector('.quantity-products');
@@ -16,11 +17,9 @@ function onAddProduct(el) {
     let parent = self.closest('.products-list-item');
     let id = parent.dataset.id;
     let title = parent.querySelector('.products-list-name').textContent;
-    console.log(title);
     let priceNumber = parseInt(priceWithoutSpaces(parent.querySelector('.add-product-button').textContent));
 
     plusFullPrice(priceNumber)
-    console.log(price);
     printFullPrice();
     cardProductList.insertAdjacentHTML('beforeend', markupCard({title, priceNumber, id}));
     printQuantity();
@@ -29,7 +28,7 @@ function onAddProduct(el) {
 };
 
 cardProductList.addEventListener('click', (e) => {
-  if(e.target.classList.contains('.delete-product')) {
+  if(e.target.classList.contains('delete-product')) {
     deleteProduct(e.target.closest('.prod-card'));
   }
 });
@@ -45,15 +44,15 @@ function markupCard ({id, title, priceNumber}) {
     </div>
     <h5>Price: <span class="card-content-price">${normalPrice(priceNumber)}</span> UAH</h5>
     <button type="button" class="delete-product" value="1">Delete</button>
-
   </li>`;
 };
 
 function deleteProduct(productParent) {
-let id = productParent.querySelector('.prod-card').dataset.id;
-document.querySelector('.prod-cart[data-id="${id}"]').querySelector('.delete-product').disabled = false;
+let id = productParent.dataset.id;
+console.log(id);
+productParent.querySelector('.delete-product').disabled = false;
 
-let currentPrice = parseInt(priceWithoutSpaces(parent.querySelector('.card-content-price').textContent));
+let currentPrice = parseInt(priceWithoutSpaces(productParent.querySelector('.card-content-price').textContent));
 minusFullPrice(currentPrice);
 printFullPrice();
 productParent.remove();
@@ -85,5 +84,4 @@ function printFullPrice() {
 function printQuantity() {
    let length = cardProductList.children.length;
    showQuantity.textContent = length;
-//    length > 0 ? cart.classList.add('active') : cart.classList.remove('active');
 };
