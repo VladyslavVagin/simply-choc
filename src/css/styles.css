@@ -1521,6 +1521,9 @@ letter-spacing: -0.28px;
 .cart-open {
   background-color: inherit;
   border: none;
+  width: 70px;
+  display: flex;
+  align-items: end;
 }
 .cart-open:hover .icon-cart,
 .cart-open:focus .icon-cart {
@@ -1581,4 +1584,15 @@ letter-spacing: -0.28px;
 .prod-card-title {
   width: 50%;
   text-transform: uppercase;
+}
+.quantity-products {
+  width: 14px;
+  height: 14px;
+  background-color: #404040;
+  color: #fcf1e0;
+  border-radius: 60px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
