@@ -1,7 +1,7 @@
-import {products} from './products';
-
 const addProductToCart = document.querySelectorAll('.add-product-button');
 const fullPrice = document.querySelector('.total-dinero');
+const cardProductList = document.querySelector('.products-cards');
+const showQuantity = document.querySelector('.quantity-products');
 let price = 0;
 
 addProductToCart.forEach(addButton => {
@@ -15,35 +15,48 @@ function onAddProduct(el) {
     let self = el.currentTarget;
     let parent = self.closest('.products-list-item');
     let id = parent.dataset.id;
-    let img = parent.querySelector('.products-list-img').getAttribute('src');
     let title = parent.querySelector('.products-list-name').textContent;
-    let priceString = parent.querySelector('.add-product-button').textContent;
     let priceNumber = parseInt(priceWithoutSpaces(parent.querySelector('.add-product-button').textContent));
-    console.log(priceNumber);
 
-    // summ 
-    // print full price 
-    // add to cart
-    // count and print quantity
-
+    plusFullPrice(priceNumber)
+    console.log(price);
+    printFullPrice();
+    cardProductList.insertAdjacentHTML('beforeend', markupCard(title, priceNumber, id));
+    printQuantity();
+   
     self.disabled = true;
-
-
 };
 
-function markupCard ({id, name, type, price, url}) {
+cardProductList.addEventListener('click', (e) => {
+  if(e.target.classList.contains('.delete-product')) {
+    deleteProduct(e.target.closest('.prod-card'));
+  }
+});
+
+
+function markupCard ({id, title, priceNumber}) {
     return `<li class="prod-card" data-id="${id}">
-    <img src="${url}" alt="${type}" width="60" height="60" />
-    <h4 class="prod-card-title">"${name}"</h4>
+    <h4 class="prod-card-title">"${title}"</h4>
     <div id="counter">
       <button type="button" data-action="decrement">-1</button>
       <span id="value">0</span>
       <button type="button" data-action="increment">+1</button>
     </div>
-    <h5>Price: ${price} UAH</h5>
+    <h5>Price: <span class="card-content-price">${normalPrice(priceNumber)}</span> UAH</h5>
     <button type="button" class="delete-product" value="1">Delete</button>
 
   </li>`;
+};
+
+function deleteProduct(productParent) {
+let id = productParent.querySelector('.prod-card').dataset.id;
+document.querySelector('.prod-cart[data-id="${id}"]').querySelector('.delete-product').disabled = false;
+
+let currentPrice = parseInt(priceWithoutSpaces(parent.querySelector('.card-content-price').textContent));
+minusFullPrice(currentPrice);
+printFullPrice();
+productParent.remove();
+printQuantity();
 };
 
 function randomId() {
@@ -64,4 +77,12 @@ function plusFullPrice(currentPrice) {
 function minusFullPrice(currentPrice) {
     return price -= currentPrice;
 };
-function printFullPrice() {};
+function printFullPrice() {
+    fullPrice.textContent = '${normalPrice(price)} UAH';
+};
+
+function printQuantity() {
+   let length = cardProductList.children.length;
+   showQuantity.textContent = length;
+//    length > 0 ? cart.classList.add('active') : cart.classList.remove('active');
+};
