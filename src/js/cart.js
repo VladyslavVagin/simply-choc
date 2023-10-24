@@ -2,6 +2,7 @@ import {products} from './products';
 
 const addProductToCart = document.querySelectorAll('.add-product-button');
 const fullPrice = document.querySelector('.total-dinero');
+let price = 0;
 
 addProductToCart.forEach(addButton => {
      addButton.closest('.products-list-item').setAttribute("data-id", randomId());
@@ -19,6 +20,13 @@ function onAddProduct(el) {
     let priceString = parent.querySelector('.add-product-button').textContent;
     let priceNumber = parseInt(priceWithoutSpaces(parent.querySelector('.add-product-button').textContent));
     console.log(priceNumber);
+
+    // summ 
+    // print full price 
+    // add to cart
+    // count and print quantity
+
+    self.disabled = true;
 
 
 };
@@ -49,3 +57,11 @@ function priceWithoutSpaces(str) {
 function normalPrice(str) {
     return String(str).replace(/(\d)(?=(\d\d\d) + ([^\d]|$))/g, '$1 ');
 };
+
+function plusFullPrice(currentPrice) {
+    return price += currentPrice;
+};
+function minusFullPrice(currentPrice) {
+    return price -= currentPrice;
+};
+function printFullPrice() {};
