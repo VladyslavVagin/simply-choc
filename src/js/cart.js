@@ -28,16 +28,9 @@ function onAddProduct(el) {
     cardProductList.insertAdjacentHTML('beforeend', markupCard({title, priceNumber, id}));
     printQuantity();
     Notify.success('PRODUCT WAS ADDED IN CART');
-    self.disabled = true;
 
-    // const quantityValues = document.querySelector('#value');
-    // const decrement = document.querySelector('[data-action="decrement"]');
-    // const increment = document.querySelector('[data-action="increment"]');
-    // let quantityProd = Number(quantityValues.textContent);
-    // quantityProd = quantity;
-    // console.log(quantityProd);
-    
-   
+    updateStorage();
+    self.disabled = true; 
 };
 
 
@@ -85,7 +78,10 @@ minusFullPrice(currentPrice);
 printFullPrice();
 productParent.remove();
 printQuantity();
+updateStorage();
 };
+
+initialState();
 
 function randomId() {
     return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
@@ -112,4 +108,23 @@ function printFullPrice() {
 function printQuantity() {
    let length = cardProductList.children.length;
    showQuantity.textContent = length;
+};
+function initialState() {
+  if(localStorage.getItem('products') !== null) {
+    cardProductList.innerHTML = localStorage.getItem('products');
+    printQuantity();
+    countSumm();
+    printFullPrice();
+  }
+};
+
+function updateStorage() {
+  let html = cardProductList.innerHTML;
+  localStorage.setItem('products', html.trim());
+};
+
+function countSumm() {
+  document.querySelectorAll('.prod-card').forEach(el => {
+    price += parseInt(priceWithoutSpaces(el.querySelector('.card-content-price').textContent));
+  });
 };
