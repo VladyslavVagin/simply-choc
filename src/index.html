@@ -131,7 +131,7 @@
             ></a>
           </li>
         </ul>
-        <button class="cart-open" data-cart-open type="button">
+        <button class="cart-open" data-cart-open type="button" disabled>
           <svg class="icon-cart" width="20" height="20">
           <use href="./images/icons/icons.svg#icon-cart"></use>
         </svg><span class="quantity-products">0</span></button>
@@ -146,7 +146,7 @@
             of pure delight!
           </h1>
           <div class="hero-bottom-block">
-            <button class="buy-now-btn" type="button">Buy now</button>
+            <a class="buy-now-btn" href="#products">Buy now</a>
             <a class="how-made-link link" href="#made">How it’s made</a>
             <div class="scroll-container">
               <a class="scroll-down-link link" href="#footer"
@@ -537,7 +537,7 @@
         </div>
       </section>
       <!--======================================= OUR PRODUCTS SECTION =========================================-->
-      <section class="products section element-animation">
+      <section class="products section element-animation" id="products">
         <div class="container">
           <h2 class="section-title">
             Our <span class="accent-color">products</span>
@@ -828,13 +828,13 @@
                 <div class="swiper-content review-content">
                   <img
                     class="swiper-image review-image"
-                    src="./images/reviews/olena-kampusch.jpg"
-                    alt="Olena Kampusch avatar"
+                    src="./images/reviews/1662655670176.jpg"
+                    alt="Tomas Morgan avatar"
                     width="80"
                     height="80"
                   />
                   <div class="reviews-content">
-                    <h3 class="reviews-list-fullname">Olena Kampusch</h3>
+                    <h3 class="reviews-list-fullname">Tomas Morgan</h3>
                     <p class="reviews-list-text">
                       Chocolate is a family favourite treat. Love the delicious
                       smooth chocolate and the creaminess inside. The wafer is
@@ -847,13 +847,13 @@
                 <div class="swiper-content review-content">
                   <img
                     class="swiper-image review-image"
-                    src="./images/reviews/olena-kampusch.jpg"
-                    alt="Olena Kampusch avatar"
+                    src="./images/reviews/resize.jpg"
+                    alt="Jose Bilbao avatar"
                     width="80"
                     height="80"
                   />
                   <div class="reviews-content">
-                    <h3 class="reviews-list-fullname">Olena Kampusch</h3>
+                    <h3 class="reviews-list-fullname">Jose Bilbao</h3>
                     <p class="reviews-list-text">
                       Chocolate is a family favourite treat. Love the delicious
                       smooth chocolate and the creaminess inside. The wafer is
@@ -1084,7 +1084,7 @@
       <div class="cards-products-choosen">
         <ul class="products-cards">
       </ul> 
-        <p>Total:<span class="total-dinero"></span></p>
+        <p class="total-price">Total:<span class="total-dinero"></span></p>
       </div>
       <form class="cart-form-user">
         <!--========================== INPUT BLOCK =========================== -->

@@ -5,6 +5,9 @@ const addProductToCart = document.querySelectorAll('.add-product-button');
 const fullPrice = document.querySelector('.total-dinero');
 const cardProductList = document.querySelector('.products-cards');
 const showQuantity = document.querySelector('.quantity-products');
+const cartOpenButton = document.querySelector('.cart-open');
+const buyNowButton = document.querySelector('.buy-now-btn');
+const userForm = document.querySelector('.cart-form-user');
 let price = 0;
 let quantity = 1;
 
@@ -13,6 +16,7 @@ addProductToCart.forEach(addButton => {
      addButton.closest('.products-list-item').setAttribute("data-id", randomId());
      addButton.addEventListener('click', onAddProduct);
 });
+buyNowButton.addEventListener('click', () => Notify.info('Please, add product to the Cart'));
     
 // FUNCTION WHEN WE ADD PRODUCT TO CART
 function onAddProduct(el) {
@@ -29,7 +33,6 @@ function onAddProduct(el) {
     cardProductList.insertAdjacentHTML('beforeend', markupCard({title, priceNumber, id, type}));
     printQuantity();
     Notify.success('PRODUCT WAS ADDED IN CART');
-
     updateStorage();
 };
 
@@ -101,6 +104,13 @@ function printFullPrice() {
 function printQuantity() {
    let length = cardProductList.children.length;
    showQuantity.textContent = length;
+   if(length > 0) {
+    cartOpenButton.disabled = false;
+    userForm.classList.remove('is-hidden');
+   } else {
+    cartOpenButton.disabled = true;
+    userForm.classList.add('is-hidden');
+   }
 };
 function initialState() {
   if(localStorage.getItem('products') !== null) {
