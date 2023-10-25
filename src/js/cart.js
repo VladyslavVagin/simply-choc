@@ -30,16 +30,26 @@ function onAddProduct(el) {
     Notify.success('PRODUCT WAS ADDED IN CART');
     self.disabled = true;
 
-    const quantityValues = document.querySelector('#value');
-    const decrement = document.querySelector('[data-action="decrement"]');
-    const increment = document.querySelector('[data-action="increment"]');
-    let quantityProd = Number(quantityValues.textContent);
-    console.log(quantityProd);
+    // const quantityValues = document.querySelector('#value');
+    // const decrement = document.querySelector('[data-action="decrement"]');
+    // const increment = document.querySelector('[data-action="increment"]');
+    // let quantityProd = Number(quantityValues.textContent);
+    // quantityProd = quantity;
+    // console.log(quantityProd);
+    
+   
 };
 
 
 // IF WE HAVE PRODUCT IN CART - PUT EVENT LISTENER FOR DELETE BUTTON
 cardProductList.addEventListener('click', (e) => {
+  const quantityValues = document.querySelectorAll('#value');
+  quantityValues.forEach(quan => {
+    if(e.target.closest('.prod-card').dataset.id === quan.dataset.id) {
+      console.log(e.target.closest('.prod-card'));
+      }
+  })
+
   if(e.target.classList.contains('delete-product')) {
     deleteProduct(e.target.closest('.prod-card'));
   }
@@ -53,7 +63,7 @@ function markupCard ({id, title, priceNumber}) {
     <h4 class="prod-card-title">"${title}"</h4>
     <div id="counter">
       <button type="button" data-action="decrement">-1</button>
-      <span id="value" class="quant">1</span>
+      <span id="value" data-id="${id}">1</span>
       <button type="button" data-action="increment">+1</button>
     </div>
     <h5>Price: <span class="card-content-price">${normalPrice(priceNumber)}</span> UAH</h5>
@@ -90,10 +100,10 @@ function normalPrice(str) {
 };
 
 function plusFullPrice(currentPrice) {
-    return price += currentPrice;
+    return price += currentPrice * quantity;
 };
 function minusFullPrice(currentPrice) {
-    return price -= currentPrice;
+    return price -= currentPrice * quantity;
 };
 function printFullPrice() {
     fullPrice.textContent = `${normalPrice(price)} UAH`;
