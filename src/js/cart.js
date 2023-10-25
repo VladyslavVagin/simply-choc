@@ -3,6 +3,7 @@ const fullPrice = document.querySelector('.total-dinero');
 const cardProductList = document.querySelector('.products-cards');
 const showQuantity = document.querySelector('.quantity-products');
 let price = 0;
+let quantity = 1;
 
 addProductToCart.forEach(addButton => {
      addButton.closest('.products-list-item').setAttribute("data-id", randomId());
@@ -22,7 +23,7 @@ function onAddProduct(el) {
     printFullPrice();
     cardProductList.insertAdjacentHTML('beforeend', markupCard({title, priceNumber, id}));
     printQuantity();
-   
+
     self.disabled = true;
 };
 
@@ -38,7 +39,7 @@ function markupCard ({id, title, priceNumber}) {
     <h4 class="prod-card-title">"${title}"</h4>
     <div id="counter">
       <button type="button" data-action="decrement">-1</button>
-      <span id="value">0</span>
+      <span id="value">1</span>
       <button type="button" data-action="increment">+1</button>
     </div>
     <h5>Price: <span class="card-content-price">${normalPrice(priceNumber)}</span> UAH</h5>
