@@ -1,3 +1,6 @@
+import { Notify } from "notiflix";
+
+// MAKE CONSTANT 
 const addProductToCart = document.querySelectorAll('.add-product-button');
 const fullPrice = document.querySelector('.total-dinero');
 const cardProductList = document.querySelector('.products-cards');
@@ -5,12 +8,13 @@ const showQuantity = document.querySelector('.quantity-products');
 let price = 0;
 let quantity = 1;
 
+// ADD EVENT LISTENER FOR ADD BUTTONS
 addProductToCart.forEach(addButton => {
      addButton.closest('.products-list-item').setAttribute("data-id", randomId());
      addButton.addEventListener('click', onAddProduct);
 });
     
-
+// FUNCTION WHEN WE ADD PRODUCT TO CART
 function onAddProduct(el) {
     el.preventDefault();
     let self = el.currentTarget;
@@ -23,10 +27,18 @@ function onAddProduct(el) {
     printFullPrice();
     cardProductList.insertAdjacentHTML('beforeend', markupCard({title, priceNumber, id}));
     printQuantity();
-
+    Notify.success('PRODUCT WAS ADDED IN CART');
     self.disabled = true;
+
+    const quantityValues = document.querySelector('#value');
+    const decrement = document.querySelector('[data-action="decrement"]');
+    const increment = document.querySelector('[data-action="increment"]');
+    let quantityProd = Number(quantityValues.textContent);
+    console.log(quantityProd);
 };
 
+
+// IF WE HAVE PRODUCT IN CART - PUT EVENT LISTENER FOR DELETE BUTTON
 cardProductList.addEventListener('click', (e) => {
   if(e.target.classList.contains('delete-product')) {
     deleteProduct(e.target.closest('.prod-card'));
@@ -34,12 +46,14 @@ cardProductList.addEventListener('click', (e) => {
 });
 
 
+
+// MARKUP OF PRODUCT CARD
 function markupCard ({id, title, priceNumber}) {
     return `<li class="prod-card" data-id="${id}">
     <h4 class="prod-card-title">"${title}"</h4>
     <div id="counter">
       <button type="button" data-action="decrement">-1</button>
-      <span id="value">1</span>
+      <span id="value" class="quant">1</span>
       <button type="button" data-action="increment">+1</button>
     </div>
     <h5>Price: <span class="card-content-price">${normalPrice(priceNumber)}</span> UAH</h5>
@@ -47,6 +61,7 @@ function markupCard ({id, title, priceNumber}) {
   </li>`;
 };
 
+// FUNCTION WHEN DELETE PRODUCT FROM CART
 function deleteProduct(productParent) {
 let id = productParent.dataset.id;
 addProductToCart.forEach(addButton => {
@@ -54,7 +69,7 @@ addProductToCart.forEach(addButton => {
     addButton.disabled = false;
   }
 })
-
+// RECALCULATE THE FINAL TOTAL PRICE
 let currentPrice = parseInt(priceWithoutSpaces(productParent.querySelector('.card-content-price').textContent));
 minusFullPrice(currentPrice);
 printFullPrice();
