@@ -21,18 +21,17 @@ function onAddProduct(el) {
     let parent = self.closest('.products-list-item');
     let id = parent.dataset.id;
     let title = parent.querySelector('.products-list-name').textContent;
+    let type = parent.querySelector('.products-list-ingredient').textContent;
     let priceNumber = parseInt(priceWithoutSpaces(parent.querySelector('.add-product-button').textContent));
 
     plusFullPrice(priceNumber)
     printFullPrice();
-    cardProductList.insertAdjacentHTML('beforeend', markupCard({title, priceNumber, id}));
+    cardProductList.insertAdjacentHTML('beforeend', markupCard({title, priceNumber, id, type}));
     printQuantity();
     Notify.success('PRODUCT WAS ADDED IN CART');
 
     updateStorage();
-    self.disabled = true; 
 };
-
 
 // IF WE HAVE PRODUCT IN CART - PUT EVENT LISTENER FOR DELETE BUTTON
 cardProductList.addEventListener('click', (e) => {
@@ -51,14 +50,10 @@ cardProductList.addEventListener('click', (e) => {
 
 
 // MARKUP OF PRODUCT CARD
-function markupCard ({id, title, priceNumber}) {
+function markupCard ({id, title, priceNumber, type}) {
     return `<li class="prod-card" data-id="${id}">
     <h4 class="prod-card-title">"${title}"</h4>
-    <div id="counter">
-      <button type="button" data-action="decrement">-1</button>
-      <span id="value" data-id="${id}">1</span>
-      <button type="button" data-action="increment">+1</button>
-    </div>
+    <p>${type}</p>
     <h5>Price: <span class="card-content-price">${normalPrice(priceNumber)}</span> UAH</h5>
     <button type="button" class="delete-product" value="1">Delete</button>
   </li>`;
@@ -80,8 +75,6 @@ productParent.remove();
 printQuantity();
 updateStorage();
 };
-
-initialState();
 
 function randomId() {
     return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
@@ -115,8 +108,8 @@ function initialState() {
     printQuantity();
     countSumm();
     printFullPrice();
-  }
-};
+     }
+  };
 
 function updateStorage() {
   let html = cardProductList.innerHTML;
@@ -128,3 +121,5 @@ function countSumm() {
     price += parseInt(priceWithoutSpaces(el.querySelector('.card-content-price').textContent));
   });
 };
+
+initialState();
