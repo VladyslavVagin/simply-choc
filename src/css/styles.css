@@ -87,6 +87,120 @@ body {
   pointer-events: none;
 }
 /* ============= /COMMON STYLES ==================================== */
+/*================================= CART STYLES CSS ===================================== */
+.icon-cart {
+  transition: all 600ms ease-in-out;
+}
+
+.cart-open {
+  background-color: inherit;
+  border: none;
+  width: 70px;
+  display: flex;
+  align-items: end;
+}
+
+.cart-open:hover .icon-cart,
+.cart-open:focus .icon-cart {
+  stroke: #fd9222;
+  fill: #fd9222;
+}
+/* ===================================== */
+.cart-container {
+  min-width: 100%;
+  max-height: 100%;
+  padding: 0.625rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  transform: translateX(100%);
+  transition: all 400ms ease-in-out;
+  overflow: scroll;
+}
+.visual {
+  transform: translateX(0);
+}
+
+.close-cart-container {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.cart-title {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.cart-title span {
+  color: var(--accent-color);
+}
+/* =================================== */
+.products-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.price-text {
+  font-size: 0.625rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.delete-product {
+  background-color: var(--accent-color);
+  border-radius: 80px;
+  border: none;
+  color: #fff;
+  transition: all 700ms ease-in-out;
+}
+.delete-product:hover, .delete-product:focus {
+  color: var(--accent-color);
+  background-color: #fafafa;
+}
+
+.prod-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.prod-card-title {
+  width: 30%;
+  text-transform: uppercase;
+  font-size: 0.625rem;
+}
+.total-dinero {
+  margin-left: 15px;
+  font-weight: 600;
+  color: #fd9222;
+}
+.type-choc {
+  font-weight: 600;
+  font-size: 0.625rem;
+  color: var(--accent-color);
+}
+.sub-title-text {
+  font-size: 0.625rem;
+  color: #404040;
+  margin-top: 0.3125rem;
+  margin-bottom: 0.3125rem;
+}
+.quantity-products {
+  background-color: #404040;
+  color: #fafafa;
+  border-radius: 80px;
+  font-size: 10px;
+  padding: 2px 4px 2px 4px;
+}
+@media screen and (min-width: 485px) {
+  .prod-card-title {
+    font-size: 1rem;
+  }
+  .type-choc, 
+  .price-text {
+    font-size: 0.875rem;
+  }
+}
 /*============================ FOR MOBILE DEVICES 320 PX  =============================*/
 /* ============= PAGE HEADER =================================== */
 .header-cont {
@@ -1274,6 +1388,19 @@ letter-spacing: -0.28px;
 /* ======================================================================================================================= */
 /*========================== ADAPTATION FOR TABLETS ============================ */
 @media screen and (min-width: 768px) {
+   .prod-card-title,
+   .type-choc, 
+   .price-text {
+    font-size: 1.125rem;
+   }
+   .cart-container {
+    min-width: 60%;
+   }
+   .cart-form-user {
+    max-width: 400px;
+    margin: 0 auto;
+   }
+
   .burger-button {
     overflow: hidden;
     position: absolute;
@@ -1513,91 +1640,3 @@ letter-spacing: -0.28px;
   stroke: #404040;
 }
 /* =================================================================================================== */
-/*================================= CART STYLES CSS ===================================== */
-.icon-cart {
-  transition: all 600ms ease-in-out;
-}
-
-.cart-open {
-  background-color: inherit;
-  border: none;
-  width: 70px;
-  display: flex;
-  align-items: end;
-}
-.cart-open:hover .icon-cart,
-.cart-open:focus .icon-cart {
-  stroke: #fd9222;
-  fill: #fd9222;
-}
-/* ===================================== */
-.cart-container {
-  min-width: 100%;
-  max-height: 100%;
-  padding: 20px;
-  position: fixed;
-  top: 0;
-  right: 0;
-  background-color: #fff;
-  transform: translateX(100%);
-  transition: all 400ms ease-in-out;
-  overflow: scroll;
-}
-.visual {
-  transform: translateX(0);
-}
-
-.close-cart-container {
-  width: 100%;
-  display: flex;
-  justify-content: end;
-}
-.cart-title {
-  text-transform: uppercase;
-  font-size: 24px;
-  text-align: center;
-}
-.cart-title span {
-  color: var(--accent-color);
-}
-.no-prod {
-  font-size: 24px;
-  font-weight: 700;
-  color: #404040;
-  text-align: center;
-  text-transform: uppercase;
-  margin-top: 20px;
-}
-/* =================================== */
-.products-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.prod-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-.prod-card-title {
-  width: 50%;
-  text-transform: uppercase;
-}
-.quantity-products {
-  width: 14px;
-  height: 14px;
-  background-color: #404040;
-  color: #fcf1e0;
-  border-radius: 60px;
-  font-size: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.total-dinero {
-  margin-left: 15px;
-  font-weight: 600;
-  color: #fd9222;
-}

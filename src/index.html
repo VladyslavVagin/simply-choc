@@ -559,7 +559,8 @@
         <div class="products-list-description">
           <h3 class="products-list-name">orange</h3>
           <p class="products-list-ingredient">Dark chocolate</p>
-          <button class="add-product-button" type="button" value="1">45 UAH</button>
+          <p class="sub-title-text">Price per 1 box</p>
+          <button class="add-product-button" type="button" value="1">300 UAH</button>
         </div>
       </div>
     </div>
@@ -575,7 +576,8 @@
         <div class="products-list-description">
           <h3 class="products-list-name">APPLE&CRANBERRY</h3>
           <p class="products-list-ingredient">Milk chocolate</p>
-          <button class="add-product-button" type="button" value="2">50 UAH</button>
+          <p class="sub-title-text">Price per 1 box</p>
+          <button class="add-product-button" type="button" value="2">315 UAH</button>
         </div>
       </div>
     </div>
@@ -591,7 +593,8 @@
       <div class="products-list-description">
         <h3 class="products-list-name">lime&sea salt</h3>
         <p class="products-list-ingredient">Dark chocolate</p>
-        <button class="add-product-button" type="button" value="3">66 UAH</button>
+        <p class="sub-title-text">Price per 1 box</p>
+        <button class="add-product-button" type="button" value="3">387 UAH</button>
       </div>
       </div>
     </div>
@@ -607,7 +610,8 @@
         <div class="products-list-description">
           <h3 class="products-list-name">pineapple</h3>
           <p class="products-list-ingredient">Dark chocolate</p>
-          <button class="add-product-button" type="button" value="4">54 UAH</button>
+          <p class="sub-title-text">Price per 1 box</p>
+          <button class="add-product-button" type="button" value="4">365 UAH</button>
         </div>
       </div>
     </div>
@@ -623,7 +627,8 @@
         <div class="products-list-description">
           <h3 class="products-list-name">Classic</h3>
           <p class="products-list-ingredient">Milk chocolate</p>
-          <button class="add-product-button" type="button" value="5">45 UAH</button>
+          <p class="sub-title-text">Price per 1 box</p>
+          <button class="add-product-button" type="button" value="5">275 UAH</button>
         </div>
       </div>
     </div>
@@ -639,7 +644,8 @@
         <div class="products-list-description">
           <h3 class="products-list-name">honey</h3>
           <p class="products-list-ingredient">Milk chocolate</p>
-          <button class="add-product-button" type="button" value="6">50 UAH</button>
+          <p class="sub-title-text">Price per 1 box</p>
+          <button class="add-product-button" type="button" value="6">340 UAH</button>
         </div>
       </div>
     </div>
@@ -655,7 +661,8 @@
               <div class="products-list-description">
                 <h3 class="products-list-name">Roasted fruits</h3>
                 <p class="products-list-ingredient">Dark chocolate</p>
-                <button class="add-product-button" type="button" value="7">66 UAH</button>
+                <p class="sub-title-text">Price per 1 box</p>
+                <button class="add-product-button" type="button" value="7">415 UAH</button>
               </div>
             </div>
     </div>
@@ -671,7 +678,8 @@
         <div class="products-list-description">
           <h3 class="products-list-name">Classic</h3>
           <p class="products-list-ingredient">White chocolate</p>
-          <button class="add-product-button" type="button" value="8">54 UAH</button>
+          <p class="sub-title-text">Price per 1 box</p>
+          <button class="add-product-button" type="button" value="8">410 UAH</button>
         </div>
       </div>
     </div>
@@ -1078,6 +1086,70 @@
       </ul> 
         <p>Total:<span class="total-dinero"></span></p>
       </div>
+      <form class="cart-form-user">
+        <!--========================== INPUT BLOCK =========================== -->
+        <div class="input-block-container">
+          <div class="input-box">
+            <label for="userName" class="label-input">Name</label>
+            <div class="input-wrap">
+              <input
+                id="user-name"
+                name="userName"
+                type="text"
+                class="input-line"
+                autofocus
+                required
+                pattern="^[a-zA-Z]+$+^[a-zA-Z]+$"
+              />
+              <svg class="review-form-icon" width="24" height="24">
+                <use href="./images/icons/icons.svg#icon-user"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="input-box">
+            <label for="userPhone" class="label-input">Phone</label>
+            <div class="input-wrap">
+              <input
+                id="user-phone"
+                name="userPhone"
+                type="tel"
+                class="input-line"
+                required
+                pattern="[0-9]{9,12}"
+              />
+              <svg class="review-form-icon" width="24" height="24">
+                <use href="./images/icons/icons.svg#icon-phone"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="input-box">
+            <label for="user-email" class="label-input">Email</label>
+            <div class="input-wrap">
+              <input
+                id="user-email"
+                name="user-email"
+                type="email"
+                class="input-line"
+                required
+              />
+              <svg class="review-form-icon" width="24" height="24">
+                <use href="./images/icons/icons.svg#icon-mail"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="input-box">
+            <label for="comment-area" class="label-input">Comment</label>
+            <textarea
+              id="comment-area"
+              name="comment"
+              placeholder="Enter text"
+              class="comment-textarea"
+              rows="5"
+            ></textarea>
+          </div>
+        </div>
+        <button type="submit" class="send-review-button">Request</button>
+      </form>
   </div>
 </div>
     <!-- ====================================================================================================================== -->

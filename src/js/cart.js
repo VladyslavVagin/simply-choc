@@ -53,8 +53,8 @@ cardProductList.addEventListener('click', (e) => {
 function markupCard ({id, title, priceNumber, type}) {
     return `<li class="prod-card" data-id="${id}">
     <h4 class="prod-card-title">"${title}"</h4>
-    <p>${type}</p>
-    <h5>Price: <span class="card-content-price">${normalPrice(priceNumber)}</span> UAH</h5>
+    <p class="type-choc">${type} 1box (50pcs)</p>
+    <h5 class="price-text">Price: <span class="card-content-price">${normalPrice(priceNumber)}</span> UAH</h5>
     <button type="button" class="delete-product" value="1">Delete</button>
   </li>`;
 };
